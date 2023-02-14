@@ -15,7 +15,7 @@ public class Main {
             result = power(base, exponent);
         }else {
             total = power(base, exponent);
-            result = 1 / result;
+            result = 1 / total;
         }
 
     
