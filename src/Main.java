@@ -7,12 +7,17 @@ public class Main {
 
         System.out.println("Taban değerini giriniz : ");
         int base = scanner.nextInt();
-
+        double total = 1;
         System.out.println("Üs değerini giriniz : ");
         int exponent = scanner.nextInt();
-        int result = 1 ;
+        double result = 1 ;
+        if(exponent>= 0){
+            result = power(base, exponent);
+        }else {
+            total = power(base, exponent);
+            result = 1 / result;
+        }
 
-        result = power(base, exponent);
     
         System.out.println("Sonuç : " + result);
     }
@@ -22,7 +27,11 @@ public class Main {
             exponent -- ;
             return base * power(base,exponent);
 
-        }else {
+        } else if (exponent < 0) {
+            exponent++;
+            return base * power(base,exponent);
+
+        } else {
             return 1;
         }
 
